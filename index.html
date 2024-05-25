@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite 3d slider</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="box">
+      <div class="item"><img src="/images/black_widow.jpg" alt="black_widow" /></div>
+      <div class="item"><img src="/images/doctor_strange.jpg" alt="doctor_strange" /></div>
+      <div class="item"><img src="/images/deadpool.jpg" alt="deadpool" /></div>
+      <div class="item"><img src="/images/capitain_america.jpg" alt="capitain_america" /></div>
+      <div class="item"><img src="/images/spider-man.jpg" alt="spider-man" /></div>
+      <div class="item"><img src="/images/groot.jpg" alt="groot" /></div>
+      <div class="item"><img src="/images/star-lord.jpg" alt="star-lord" /></div>
+    </div>
+
+    <div class="buttons">
+      <span class="prev"></span>
+      <span class="next"></span>
+    </div>
+
+    <script>
+      let prev = document.querySelector(".prev");
+      let next = document.querySelector(".next");
+
+      next.addEventListener("click", () => {
+        let items = document.querySelectorAll(".item");
+        document.querySelector(".box").appendChild(items[0]);
+      });
+
+      prev.addEventListener("click", () => {
+        let items = document.querySelectorAll(".item");
+        document.querySelector(".box").prepend(items[items.length - 1]);
+      });
+    </script>
+  </body>
+</html>
